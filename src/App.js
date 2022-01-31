@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { AddGif } from "./components/AddGif";
+import { ItemsGifs } from "./components/ItemsGifs";
 
 function App() {
+  const [categories, setCategories] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>GifApp</h1>
+      <hr />
+      <AddGif setCategories={setCategories} />
+      <ItemsGifs categories={categories} />
+    </>
   );
 }
 
